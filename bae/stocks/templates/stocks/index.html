@@ -1,0 +1,9 @@
+{% if price_list %}
+    <ul>
+    {% for price in price_list %}
+        <li>{{ price }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No prices are available.</p>
+{% endif %}
