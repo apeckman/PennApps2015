@@ -57,66 +57,6 @@ class Sentiment(models.Model):
         db_table = 'sentiment'
 
 
-class StocksPrice(models.Model):
-    id = models.IntegerField(primary_key=True)
-    symbol = models.CharField(max_length=1)
-    date_ex = models.DateTimeField()
-    open_p = models.DecimalField(max_digits=6, decimal_places=4)
-    high_p = models.DecimalField(max_digits=6, decimal_places=4)
-    low_p = models.DecimalField(max_digits=6, decimal_places=4)
-    close_p = models.DecimalField(max_digits=6, decimal_places=4)
-    volume = models.IntegerField()
-    adj_close_p = models.DecimalField(max_digits=6, decimal_places=4)
-
-    class Meta:
-        db_table = 'stocks_price'
-
-
-class StocksSentiment(models.Model):
-    date_ex = models.DateTimeField()
-    symbol = models.CharField(max_length=6)
-    totalshares = models.IntegerField(db_column='totalShares')  # Field name made lowercase.
-    totalholders = models.IntegerField(db_column='totalHolders')  # Field name made lowercase.
-    newposshares = models.IntegerField(db_column='newposShares')  # Field name made lowercase.
-    newposholders = models.IntegerField(db_column='newposHolders')  # Field name made lowercase.
-    soldoutposshares = models.IntegerField(db_column='soldoutposShares')  # Field name made lowercase.
-    soldoutposholders = models.IntegerField(db_column='soldoutposHolders')  # Field name made lowercase.
-    buyersshares = models.IntegerField(db_column='buyersShares')  # Field name made lowercase.
-    buyers = models.IntegerField()
-    sellersshares = models.IntegerField(db_column='sellersShares')  # Field name made lowercase.
-    sellers = models.IntegerField()
-    nextyr = models.DecimalField(max_digits=6, decimal_places=2)
-    next5yr = models.DecimalField(max_digits=6, decimal_places=2)
-    meanrecthiswk = models.DecimalField(max_digits=3, decimal_places=2)
-    meanreclastwk = models.DecimalField(max_digits=3, decimal_places=2)
-    numbrokers = models.IntegerField()
-    shorts = models.DecimalField(max_digits=3, decimal_places=2)
-    shortsp = models.IntegerField()
-    shortsc = models.IntegerField()
-    shortsmove = models.IntegerField()
-    price = models.DecimalField(max_digits=10, decimal_places=8)
-    company_name = models.CharField(max_length=50)
-    rating = models.DecimalField(max_digits=12, decimal_places=10)
-
-    class Meta:
-        db_table = 'stocks_sentiment'
-
-
-class StocksSymbol(models.Model):
-    symbol = models.CharField(max_length=6)
-    company = models.CharField(max_length=50)
-    lastsale = models.DecimalField(max_digits=6, decimal_places=4)
-    marketcap = models.IntegerField()
-    adrtso = models.IntegerField()
-    ipoyear = models.IntegerField()
-    sector = models.CharField(max_length=20)
-    industry = models.CharField(max_length=50)
-    quotelink = models.CharField(max_length=50)
-
-    class Meta:
-        db_table = 'stocks_symbol'
-
-
 class Symbol(models.Model):
     symbol = models.CharField(primary_key=True, max_length=10)
     company = models.CharField(max_length=255, blank=True, null=True)
@@ -130,6 +70,6 @@ class Symbol(models.Model):
 
     def __str__(self):
     	return self.symbol
-    	
+
     class Meta:
         db_table = 'symbol'
