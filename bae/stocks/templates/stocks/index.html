@@ -1,16 +1,25 @@
-<header>
-{% load staticfiles %}
-	<title>BAE</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'stocks/style.css' %}" />
-</header>
-<body>
-{% if price_list %}
-    <ul>
-    {% for price in price_list %}
-        <li>{{ price }}</li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No prices are available.</p>
-{% endif %}
-</body>
+<html>
+	<header>
+	{% load staticfiles %}
+		<title>BAE</title>
+		<link type="text/css" rel="stylesheet" href="{% static 'materialize/bin/materialize.css' %}"  media="screen,projection"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'stocks/style.css' %}" />
+	</header>
+	<body>
+	    <!--Import jQuery before materialize.js-->
+    {% block footer %}
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="{% static 'materialize/bin/materialize.js' %}"></script>
+    {% endblock %}
+    
+	{% if price_list %}
+	    <ul>
+	    {% for price in price_list %}
+	        <li>{{ price }}</li>
+	    {% endfor %}
+	    </ul>
+	{% else %}
+	    <p>No prices are available.</p>
+	{% endif %}
+	</body>
+</html>
