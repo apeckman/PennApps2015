@@ -1,3 +1,9 @@
+<header>
+{% load staticfiles %}
+	<title>BAE</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'stocks/style.css' %}" />
+</header>
+<body>
 {% if price_list %}
     <ul>
     {% for price in price_list %}
@@ -7,3 +13,4 @@
 {% else %}
     <p>No prices are available.</p>
 {% endif %}
+</body>
