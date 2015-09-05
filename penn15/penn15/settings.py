@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'stocks',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'penn15.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bae',
+        'NAME': 'stocks',
         'USER': 'root',
         'PASSWORD': ''
         
