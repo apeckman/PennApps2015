@@ -14,7 +14,7 @@ from django.db import models
 
 
 class Price(models.Model):
-    symbol = models.CharField(max_length=10)
+    symbol = models.CharField(max_length=10, primary_key=True)
     date_ex = models.DateField()
     open_p = models.DecimalField(max_digits=10, decimal_places=4, blank=True, null=True)
     high_p = models.DecimalField(max_digits=10, decimal_places=4, blank=True, null=True)
@@ -29,7 +29,7 @@ class Price(models.Model):
 
 class Sentiment(models.Model):
     date_ex = models.DateField()
-    symbol = models.CharField(max_length=10)
+    symbol = models.CharField(max_length=10, primary_key=True)
     totalshares = models.BigIntegerField(db_column='totalShares', blank=True, null=True)  # Field name made lowercase.
     totalholders = models.BigIntegerField(db_column='totalHolders', blank=True, null=True)  # Field name made lowercase.
     newposshares = models.BigIntegerField(db_column='newposShares', blank=True, null=True)  # Field name made lowercase.
