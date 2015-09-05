@@ -14,3 +14,12 @@ def index(request):
 		'price_list': price_list,
 		})
 	return HttpResponse(template.render(context))
+
+def detail(request, symbol):
+	symbol = Symbol.objects.filter_by(symbol = symbol)
+	template = loader.get_template('stocks/detailz.html')
+	context = RequestContext(request, {
+		'symbol': symbol,
+		})
+	return HttpResponse(template.render(context))
+

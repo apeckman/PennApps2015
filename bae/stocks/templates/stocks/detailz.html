@@ -21,22 +21,18 @@
     				</div>
     				<div class = "divider"></div>
     				  <div class="section col s8 offset-s6">
-					    <h5>Section 1</h5>
-					    <p>Stuff .......</p>
+					    	{% if symbol %}
+						    <ul>
+{{ symbol }}
+						    </ul>
+						{% else %}
+						    <p>No prices are available.</p>
+						{% endif %}
 					  </div>
 
     			</div>
     		</div>
     	</div>
     </div>
-	{% if price_list %}
-	    <ul>
-	    {% for symbol in price_list %}
-	        <li><a href="/stocks/{{ symbol }}/">{{ symbol }}</a></li>
-	    {% endfor %}
-	    </ul>
-	{% else %}
-	    <p>No prices are available.</p>
-	{% endif %}
 	</body>
 </html>
