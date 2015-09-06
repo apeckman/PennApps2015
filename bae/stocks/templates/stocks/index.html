@@ -1,10 +1,12 @@
 <html>
 	<header>
 	{% load staticfiles %}
+	{% load dajaxice_templatetags %}
 		<title>BAE</title>
 		<link type="text/css" rel="stylesheet" href="{% static 'materialize/bin/materialize.css' %}"  media="screen,projection"/>
 		<link rel="stylesheet" type="text/css" href="{% static 'stocks/style.css' %}" />
 		<link rel='stylesheet' type='text/css' href='{% static 'css/jquery-ui/smoothness/jquery-ui.css' %}' />
+		 {% dajaxice_js_import %}
 	</header>
 	<body>
 	    <!--Import jQuery before materialize.js-->
@@ -12,6 +14,7 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="{% static 'materialize/bin/materialize.js' %}"></script>
         <script type="text/javascript" src="{% static 'stocks/index.js' %}"></script>
+        <script type="text/javascript" src="{{ MEDIA_URL }}jquery.dajax.core.js"></script>
         <script type='text/javascript' src="{% static 'js/jquery-ui.js' %}"></script>
 		
     {% endblock %}
@@ -33,77 +36,28 @@
     			<div class = "row">
     				<div class = "col s12" id="wow">
     					<h1>Bae</h1>
-					    <h5><a href="#">Symbols</a></h5>
-					    <p>
-					    	{% if price_list %}
-							    <ul>
-							    {{price_list}}
+					    <h5><a href="#">This is a website where you can do stuff.</a></h5>
 
-							    </ul>
-							{% else %}
-							    <p>No prices are available.</p>
-							{% endif %}
-						</p>
 						<br>
 						<br>
 						<div id="sliderthingy">
 							<span id="slider" ><article id="slider-scale" class="slider"></article></span>
-							<script>
-							    $("#slider-scale").slider({
-							        animate: true,
-							        range: true,
-							        value: 5,
-							        min: 0,
-							        max: 4,
-							        step: 1,
-							        values: [0,1,2,3,4],
-							        // Gets a live reading of the value and prints it on the page
-							        slide: function( event, ui ) {
-							 			var result = ui;
-							 			$("#sliderResult").html(ui.values[1]);
 
-							        }
-							    })
-							    .each(function() {
-							    var labels = ['very short', 'short', 'neutral', 'long', 'very long'];
-							    for (var i = 0; i < 5; i++) {
-							        var left = i * 20 + 10;
-							        var el = $('<label class = "center-align">' + labels[i] + '</label>').css({left: left + '%'});
-							        $("#slider-scale").append(el);
-
-							    }
-							    });
-							    </script>
 						</div>
 						<br>
 						<br>
 
 						<div id="sliderResult"></div>
 
-						<a class="waves-effect waves-light btn green accent-1 grey-text text-darken-3" id= "algButton">RUN ALGORITHM WOW</a>
+						<a onclick="Dajaxice.examples.dajaxice_example(wow_button)" class="waves-effect waves-light btn green accent-1 grey-text text-darken-3" id= "algButton" >RUN ALGORITHM WOW</a>
+						<script>
+							$("#algButton").click(function() {
+								
+							});
+						</script>
 
     				</div>
     			</div>
-
-    			<script>
-    			$(document).ready(function() {
-					$("#aboutDiv").hide();
-					$("#finraDiv").hide();
-					$("#contactDiv").hide();
-				});
-    				$("#about").click(function() {
-    					console.log("wow");
-						$("#wow").fadeOut(500);
-						$("#aboutDiv").fadeIn(500);
-					});
-					$("#closeA").click(function() {
-    					console.log("wow");
-						$("#wow").fadeIn(250);
-						$("#aboutDiv").fadeOut(500);
-					});
-
-
-    			</script>
 
     			<footer class="page-footer grey darken-4">
 		          <div class="footer-copyright">
@@ -115,17 +69,21 @@
 
 		        <div id= "aboutDiv" class="hiddenPage">
 		        <span class="close" id="closeA">close</span>
-		        ABOUT
+		        We make very cool hacks that work very well so we should probably win.
+		        <br>
+		        Please look around our website and use the slider because it is pretty.
 		        </div>
 
 		        <div id= "finraDiv" class="hiddenPage">
 		        <span class="close" id="closeF">close</span>
-		        FINRA
+		        "In the world of high speed trading, an average of 30 billion transactions occur daily in the American financial markets. We're constantly innovating to regulate aspects of the securities business including fraud detection, insider trading, and market manipulation." - FINRA
 		        </div>
 
 		        <div id= "contactDiv" class="hiddenPage">
 		        <span class="close" id="closeC">close</span>
-		        CONTACT
+		        For information about this site direct emails to 
+		        <br>
+		        asorge@cmu.edu
 		        </div>
     		</div>
 	</body>

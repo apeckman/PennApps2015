@@ -58,10 +58,14 @@ html body {
     height: 60%;
     top: 20%;
     left: 20%;
-    border: 1px solid #91d4ac; }
+    border: 1px solid #91d4ac;
+    background-color: #444;
+    padding-top: 10%;
+    text-align: center;
+    font-size: 2em; }
   html body span.close {
     position: absolute;
-    color: #444;
+    color: black;
     top: 0.4em;
     right: 0.4em;
     width: 2em;
@@ -81,6 +85,6 @@ html body {
     line-height: 0.6;
     text-align: center;
     text-indent: 0px;
-    text-shadow: 1px 2px #91d4ac; }
+    text-shadow: 1px 1px #444; }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,6 +3,7 @@ $navy: #113b64;
 $white: white;
 $lightgrey: #999;
 $medgreen: #91d4ac;
+$medgrey: #444;
 
 @mixin transition($transition...) {
     -moz-transition:    $transition;
@@ -115,11 +116,15 @@ html {
 			top: 20%;
 			left: 20%;
 			border: 1px solid $medgreen;
+			background-color: $medgrey;
+			padding-top: 10%;
+			text-align: center;
+			font-size: 2em;
 		}
 
 		span.close {
 		    position: absolute;
-		    color: #444;
+		    color: black;
 		    top: 0.4em;
 		    right: 0.4em;
 		    width: 2em;
@@ -142,7 +147,7 @@ html {
 		    line-height: 0.6;
 		    text-align: center;
 		    text-indent: 0px;
-		    text-shadow: 1px 2px $medgreen;
+		    text-shadow: 1px 1px $medgrey;
 
 		}
 	}

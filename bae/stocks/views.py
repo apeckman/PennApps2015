@@ -8,7 +8,6 @@ from .models import Symbol
 
 import PythonAlg
 
-
 def index(request):
 	price_list = Symbol.objects.all()
 	price_list = PythonAlg.__init__
