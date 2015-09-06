@@ -9,11 +9,10 @@ from .models import Symbol
 import PythonAlg
 
 def index(request):
-	price_list = Symbol.objects.all()
-	price_list = PythonAlg.__init__
+	stock = PythonAlg.__init__
 	template = loader.get_template('stocks/index.html')
 	context = RequestContext(request, {
-		'price_list': price_list,
+		'stock': stock,
 		})
 	return HttpResponse(template.render(context))
 
@@ -23,3 +22,4 @@ def detail(request, symbol):
 		'symbol': symbol,
 		})
 	return HttpResponse(template.render(context))
+

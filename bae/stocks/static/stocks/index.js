@@ -27,6 +27,7 @@ $(document).ready(function() {
 	$("#aboutDiv").hide();
 	$("#finraDiv").hide();
 	$("#contactDiv").hide();
+	$("#stocks").hide();
 
 	$("#about").click(function() {
 		$("#wow").fadeOut(250);
@@ -58,14 +59,12 @@ $(document).ready(function() {
 		$("#contactDiv").fadeOut(250);
 	});
 
-	function wow_button() {
-		alert(data.message);
-	}
-
 	$("#algButton").click(function() {
-		console.log("STOCK");
-
+		$("#stocks").fadeIn(50);
 	});
+
+
+
 
 });
 
