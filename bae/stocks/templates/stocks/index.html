@@ -11,32 +11,30 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="{% static 'materialize/bin/materialize.js' %}"></script>
     {% endblock %}
+			<div id="bgOverlay">
+				<!-- bg image overlay -->
+			</div>
 
-    <div class = "container">
-    	<div class = "row">
-    		<div class = "col s12">
+    		<div class = "col s12 center-align" id="centerContent">
     			<div class = "row">
-    				<div class = "col s6 offset-s6">
+    				<div class = "col s12">
     					<h1>Bae</h1>
-    				</div>
-    				<div class = "divider"></div>
-    				  <div class="section col s8 offset-s6">
-					    <h5>Section 1</h5>
-					    <p>Stuff .......</p>
-					  </div>
+    					<div class = "divider"></div>
+					    <h5><a href="#">Symbols</a></h5>
+					    <p>
+					    	{% if price_list %}
+							    <ul>
+							    {{price_list}}
 
+							    </ul>
+							{% else %}
+							    <p>No prices are available.</p>
+							{% endif %}
+						</p>
+    				</div>
     			</div>
     		</div>
-    	</div>
-    </div>
-	{% if price_list %}
-	    <ul>
-	    {% for symbol in price_list %}
-	        <li><a href="/stocks/{{ symbol }}/">{{ symbol }}</a></li>
-	    {% endfor %}
-	    </ul>
-	{% else %}
-	    <p>No prices are available.</p>
-	{% endif %}
+
+    
 	</body>
 </html>
