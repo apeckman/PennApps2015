@@ -15,6 +15,12 @@ html body {
     width: 100%;
     height: 100%;
     z-index: 2; }
+  html body footer {
+    position: absolute;
+    width: 100%;
+    height: 8%;
+    bottom: 0;
+    opacity: 0.6; }
   html body a {
     text-decoration: none;
     color: #91d4ac;
@@ -26,5 +32,16 @@ html body {
     color: #999;
     text-shadow: #91d4ac 1px 1px 1px;
     font-style: italic; }
+  html body #sliderthingy {
+    position: absolute;
+    width: 50%;
+    left: 25%; }
+  html body #slider label {
+    position: absolute;
+    width: 20px;
+    margin-top: 20px;
+    margin-left: -10px;
+    text-align: center;
+    color: #999; }
 
 /*# sourceMappingURL=style.css.map */

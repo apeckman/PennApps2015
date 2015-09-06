@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STATIC_ROOT = os.path.join('/Users/allysorge/PennApps2015/bae/', 'static')
+
 
 # Application definition
 
@@ -39,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'stocks',
     'materialize',
+    'jquery_ui',
 )
 
 MIDDLEWARE_CLASSES = (
