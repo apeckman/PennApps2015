@@ -124,12 +124,8 @@ def main():
     deserializeData()
     pactions.shuffle()
     temp = writeFiles(filename)
-    temp_1 = writeFiles(filename)
-    temp_2 = writeFiles(filename)
-    temp_3 = writeFiles(filename)
-    temp_4 = writeFiles(filename)
     serializeData()
-    return (temp, temp_1, temp_2, temp_3, temp_4)
+    return temp
 
 if __name__ == "stocks.PythonAlg.main":
     __name__ = main()
