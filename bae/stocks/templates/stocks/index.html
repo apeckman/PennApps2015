@@ -4,14 +4,16 @@
 		<title>BAE</title>
 		<link type="text/css" rel="stylesheet" href="{% static 'materialize/bin/materialize.css' %}"  media="screen,projection"/>
 		<link rel="stylesheet" type="text/css" href="{% static 'stocks/style.css' %}" />
+		<link rel='stylesheet' type='text/css' href='{% static 'css/jquery-ui/smoothness/jquery-ui.css' %}' />
 	</header>
 	<body>
 	    <!--Import jQuery before materialize.js-->
     {% block footer %}
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="{% static 'materialize/bin/materialize.js' %}"></script>
-        <script type='text/javascript' src='{% static 'js/jquery-ui.js' %}'></script>
-		<link rel='stylesheet' type='text/css' href='{% static 'css/jquery-ui/smoothness/jquery-ui.css' %}' />
+        <script type="text/javascript" src="{% static 'stocks/index.js' %}"></script>
+        <script type='text/javascript' src="{% static 'js/jquery-ui.js' %}"></script>
+		
     {% endblock %}
 			<div id="bgOverlay">
 				<!-- bg image overlay -->
@@ -19,16 +21,17 @@
 
     		<div class = "col s12 center-align" id="centerContent">
     			<nav class = "grey darken-4">
-			    <div class="nav-wrapper">
-			      <ul id="nav-mobile" class="left hide-on-med-and-down">
-			        <li><a href="sass.html">Sass</a></li>
-			        <li><a href="badges.html">Components</a></li>
-			        <li><a href="collapsible.html">JavaScript</a></li>
-			      </ul>
-			    </div>
-			  </nav>
+				    <div class="nav-wrapper">
+				      <ul id="nav-mobile" class="left hide-on-med-and-down">
+				        <li><a href="#" id="about">About</a></li>
+				        <li><a href="#" id="finra">FINRA</a></li>
+				        <li><a href="#" id="contact">Contact Us</a></li>
+				      </ul>
+				    </div>
+			  	</nav>
+
     			<div class = "row">
-    				<div class = "col s12">
+    				<div class = "col s12" id="wow">
     					<h1>Bae</h1>
 					    <h5><a href="#">Symbols</a></h5>
 					    <p>
@@ -77,10 +80,30 @@
 
 						<div id="sliderResult"></div>
 
-						<a class="waves-effect waves-light btn green accent-1 grey-text text-darken-3">RUN ALGORITHM WOW</a>
-						
+						<a class="waves-effect waves-light btn green accent-1 grey-text text-darken-3" id= "algButton">RUN ALGORITHM WOW</a>
+
     				</div>
     			</div>
+
+    			<script>
+    			$(document).ready(function() {
+					$("#aboutDiv").hide();
+					$("#finraDiv").hide();
+					$("#contactDiv").hide();
+				});
+    				$("#about").click(function() {
+    					console.log("wow");
+						$("#wow").fadeOut(500);
+						$("#aboutDiv").fadeIn(500);
+					});
+					$("#closeA").click(function() {
+    					console.log("wow");
+						$("#wow").fadeIn(250);
+						$("#aboutDiv").fadeOut(500);
+					});
+
+
+    			</script>
 
     			<footer class="page-footer grey darken-4">
 		          <div class="footer-copyright">
@@ -89,6 +112,21 @@
 		            </div>
 		          </div>
 		        </footer>
+
+		        <div id= "aboutDiv" class="hiddenPage">
+		        <span class="close" id="closeA">close</span>
+		        ABOUT
+		        </div>
+
+		        <div id= "finraDiv" class="hiddenPage">
+		        <span class="close" id="closeF">close</span>
+		        FINRA
+		        </div>
+
+		        <div id= "contactDiv" class="hiddenPage">
+		        <span class="close" id="closeC">close</span>
+		        CONTACT
+		        </div>
     		</div>
 	</body>
 </html>

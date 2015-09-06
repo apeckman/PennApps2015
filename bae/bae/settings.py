@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-STATIC_ROOT = os.path.join('/Users/allysorge/PennApps2015/bae/', 'static')
+STATIC_URL = '/static/'
 
 
 # Application definition

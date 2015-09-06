@@ -43,5 +43,44 @@ html body {
     margin-left: -10px;
     text-align: center;
     color: #999; }
+  html body #sliderResults {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    padding-top: 5%; }
+  html body #algButton {
+    position: absolute;
+    top: 50%;
+    left: 43%; }
+  html body .hiddenPage {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    border: 1px solid #91d4ac; }
+  html body span.close {
+    position: absolute;
+    color: #444;
+    top: 0.4em;
+    right: 0.4em;
+    width: 2em;
+    height: 2em;
+    text-indent: -9000px;
+    cursor: pointer;
+    z-index: 1000; }
+  html body span.close:before {
+    content: 'x';
+    font-weight: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    line-height: 0.6;
+    text-align: center;
+    text-indent: 0px;
+    text-shadow: 1px 2px #91d4ac; }
 
 /*# sourceMappingURL=style.css.map */
