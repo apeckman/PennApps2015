@@ -44,12 +44,14 @@ def writeFiles(filename):
         f.write('\n')
     f.write("PWA: " + pw.toString() + '\n')
     f.write("FTL: " + ft.toString() + '\n')
-    f.write("AlgChooser: " + str(algs.algChoice()) + ", Weights: " +
+    the_alg = algs.algChoice(2)
+    f.write("AlgChooser: " + str(the_alg) + ", Weights: " +
         str(algs.pwa.getWeight()) + ", " + str(algs.ftl.getWeight()))
     algs.changeWeights(pw,ft)
     f.close()
     for e in pactions.exp:
         e.changeWeight(0.05)
+    print the_alg
 
 def serializeData():
     f = open('pickle_file.txt', 'wb')
@@ -61,7 +63,7 @@ def serializeData():
     f.close()
 
 def deserializeData():
-    f = open('pickle_file_save_state.txt', 'rb')
+    f = open('pickle_file.txt', 'rb')
     alg = f.readline().split()
     pactions.setWeight(float(alg[1]))
     factions.setWeight(float(alg[3]))
@@ -117,8 +119,9 @@ def main():
     cnx.close()
     """
     deserializeData()
-    pactions.shuffle()
-    writeFiles(filename)
+    for i in xrange(0,4):
+        pactions.shuffle()
+        writeFiles(filename)
     serializeData()
 
 if __name__ == "__main__":
