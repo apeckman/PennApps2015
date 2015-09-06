@@ -7,5 +7,5 @@ class Cost(object):
 		self.cost = _cost
 
 	def toString(self):
-		print ticker + ', ' + cost
+		print str(ticker) + ', ' + str(cost)
 

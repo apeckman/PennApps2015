@@ -51,11 +51,23 @@ class Pwa(object):
 					e.cost = c.cost
 					break
 		for e in self.exp:
-			e.changeWeight(0.1)
+			e.changeWeight(0.05)
 
 	def toString(self):
 		for e in self.exp:
 			e.printExp()
+
+	def weightRank(self):
+		weightList = []
+		for expert in self.exp:
+			weightList.append((expert.ticker, expert.getWeight()))
+		return sorted(weightList, key = lambda expert: expert[1])
+
+	def costRank(self):
+		costList = []
+		for expert in self.exp:
+			costList.append((expert.ticker, expert.getCost()))
+		return sorted(weightList, key = lambda expert: expert[1])
 
 
 
