@@ -122,6 +122,8 @@ def main():
     for i in xrange(0,4):
         pactions.shuffle()
         writeFiles(filename)
+        print pactions.weightRank()
+        print pactions.costRank()
     serializeData()
 
 if __name__ == "__main__":

@@ -16,6 +16,9 @@ class Expert(object):
 	def getWeight(self):
 		return self.weight
 
+	def getCost(self):
+		return self.cost
+
 	def setCost(self,_cost):
 		self.cost = _cost
 

@@ -61,14 +61,13 @@ class Pwa(object):
 		weightList = []
 		for expert in self.exp:
 			weightList.append((expert.ticker, expert.getWeight()))
-		return sorted(weightList, key = lambda expert: expert[1])
+		return sorted(weightList, key = lambda expert: expert[1], reverse=True)[0:5]
 
 	def costRank(self):
 		costList = []
 		for expert in self.exp:
 			costList.append((expert.ticker, expert.getCost()))
-		return sorted(weightList, key = lambda expert: expert[1])
-
+		return sorted(costList, key = lambda expert: expert[1])[0:5]
 
 
 
