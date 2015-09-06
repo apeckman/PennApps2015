@@ -53,10 +53,10 @@ class AlgWeights(object):
 			choice = f;
 		if choice.cost < 0.0:
 			self.pastchoice.setWeight(self.pastchoice.getWeight() * 
-				(1 - (0.1 * choice.cost)))
+				(1 - (0.05 * float(choice.cost))))
 		elif choice.cost > 0.0:
 			self.pastchoice.setWeight(self.pastchoice.getWeight() * 
-				(1 + (0.1 * choice.cost)))	
+				(1 + (0.05 * float(choice.cost))))	
 
 
 
