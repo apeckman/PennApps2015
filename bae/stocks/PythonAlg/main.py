@@ -52,9 +52,9 @@ def writeFiles(filename):
     for e in pactions.exp:
         e.changeWeight(0.05)
     if the_alg == 'PWA':
-        return (the_alg,pw.toString())
+        return (pw.toString())
     else:
-        return (the_alg,ft.toString())
+        return (ft.toString())
 
 def serializeData():
     f = open('stocks/PythonAlg/pickle_file.txt', 'wb')
